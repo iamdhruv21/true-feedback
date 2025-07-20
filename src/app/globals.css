@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme - Clean and bright */
+    --background: 240 10% 98%;
+    --foreground: 240 10% 15%;
+
+    --card: 240 10% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 240 10% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    --primary: 262 83% 58%; /* Modern purple */
+    --primary-foreground: 240 10% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 20%;
+
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 4% 50%;
+
+    --accent: 217 91% 60%; /* Complementary blue */
+    --accent-foreground: 240 10% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 88%;
+    --input: 240 6% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme - Lighter, more modern grays with purple/blue accents */
+    --background: 240 6% 10%; /* Much lighter than before */
+    --foreground: 240 5% 95%;
+
+    --card: 240 4% 12%; /* Lighter card background */
+    --card-foreground: 240 5% 95%;
+
+    --popover: 240 4% 12%;
+    --popover-foreground: 240 5% 95%;
+
+    --primary: 262 83% 58%; /* Vibrant purple */
+    --primary-foreground: 240 10% 98%;
+
+    --secondary: 240 4% 18%; /* Much lighter secondary */
+    --secondary-foreground: 240 5% 90%;
+
+    --muted: 240 4% 16%; /* Lighter muted */
+    --muted-foreground: 240 5% 70%; /* Much lighter text */
+
+    --accent: 217 91% 60%; /* Bright blue accent */
+    --accent-foreground: 240 10% 98%;
+
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 4% 18%; /* Lighter borders */
+    --input: 240 4% 16%;
+    --ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Additional modern styling for enhanced visual appeal */
+@layer components {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .gradient-card {
+    background: linear-gradient(135deg,
+    hsl(var(--card)) 0%,
+    hsl(var(--muted)) 100%
+    );
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    background: hsl(var(--background) / 0.85);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px hsl(var(--foreground) / 0.1);
+  }
+}
