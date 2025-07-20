@@ -268,7 +268,7 @@ function UserDashboard() {
               {messages.length > 0 ? (
                   messages.map((message, index) => (
                       <div
-                          key={message._id}
+                          key={index+45}
                           className="animate-in fade-in-0 slide-in-from-bottom-4"
                           style={{ animationDelay: `${index * 0.1}s` }}
                       >
